@@ -1,0 +1,17 @@
+# 使用说明 V3.2.0
+# 1. 使用docker-compose  宿主机不需要配置host来发现
+# 2. 无需修改源码，根目录  docker-compose up 即可
+# 3. 静静等待服务启动
+
+version: '2'
+services:
+  pigx-ui:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    image: pigx-ui
+    restart: always
+    container_name: pigx-ui
+    ports:
+      - 8080:80
+
